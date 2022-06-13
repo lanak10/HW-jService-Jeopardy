@@ -32,18 +32,22 @@ function App() {
       <h1>Welcome to Jeopardy!</h1>
       <div class="score-container">
         <h2>Score: <span>{score}</span></h2>
-        <Button variant="info" type="submit"  onClick={() => setScore(score + 1)}>Add Points to Score</Button>
+        <Button variant="info" type="submit" onClick={() => setScore(score + 1)}>Add Points to Score</Button>
         <Button variant="warning" type="submit" onClick={() => setScore(score - 1)}>Subtract Points from Score</Button>
       </div>
-      <h2>Let's Play!</h2>
-      <Button type="submit" onClick={handleSubmit}>Get Random Trivia Question</Button>
 
-      {questions.map(question => {
-        return (
-          <QuestionInfo question={question} />
-        )
-      })}
+      <div class="card border-primary mb-3">
+        <div class="card-body text-primary">
+          <h2 class="card-title">Let's Play!</h2>
+          <Button type="submit" onClick={handleSubmit}>Get Random Trivia Question</Button>
 
+          {questions.map(question => {
+            return (
+              <QuestionInfo question={question} />
+            )
+          })}
+        </div>
+      </div>
 
 
 
