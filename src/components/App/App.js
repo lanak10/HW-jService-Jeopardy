@@ -26,20 +26,14 @@ function App() {
     }
   }
 
-  /*   const addPoints = () => {
-      let score = 0;
-      let count = Number(score.innerHTML);
-      score.innerHTML = score += 1;
-    } */
 
   return (
     <div className="App">
       <h1>Welcome to Jeopardy!</h1>
       <div class="score-container">
-        <h2>Score: </h2>
-        <h3 class="score-counter">0</h3>
-        <Button variant="info" type="submit" value=".score-counter" onClick={() => setScore(+score + 1)}>Add Points to Score</Button>
-        <Button variant="warning" type="submit">Subtract Points from Score</Button>
+        <h2>Score: <span>{score}</span></h2>
+        <Button variant="info" type="submit"  onClick={() => setScore(score + 1)}>Add Points to Score</Button>
+        <Button variant="warning" type="submit" onClick={() => setScore(score - 1)}>Subtract Points from Score</Button>
       </div>
       <h2>Let's Play!</h2>
       <Button type="submit" onClick={handleSubmit}>Get Random Trivia Question</Button>
